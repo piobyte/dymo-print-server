@@ -13,6 +13,11 @@ The project is build on top of the __dymo-print__ Java library.
 - Mac OS
 - Windows
 
+## OpenAPI
+The OpenAPI documentation can be found at http://IP_or_Host:8080/swagger-ui/.
+
+![Swagger UI](swagger_ui.png)
+
 ## Setup
 
 ### Linux
