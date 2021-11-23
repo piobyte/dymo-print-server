@@ -1,0 +1,4 @@
+${AnsiStyle.NORMAL}
+Application:    ${AnsiStyle.BOLD}${AnsiColor.BLUE}dymo-print-server${application.formatted-version}${AnsiStyle.NORMAL}
+Spring Boot:    ${AnsiStyle.BOLD}v${spring-boot.version}${AnsiStyle.NORMAL}
+${AnsiStyle.NORMAL}
