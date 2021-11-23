@@ -102,8 +102,8 @@ public class PrintController {
             @ApiResponse(responseCode = "500", description = "Internal error", content = @Content)
     })
     @PostMapping(value = "/{serialNumber}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = MediaType.IMAGE_PNG_VALUE)
-    public ResponseEntity createEvaluation(@RequestPart MultipartFile multipartFile, @PathVariable String serialNumber,
-                                           @RequestParam Tape tape, @RequestParam(required = false, defaultValue = "false") boolean preview) {
+    public ResponseEntity printLabel(@RequestPart MultipartFile multipartFile, @PathVariable String serialNumber,
+                                     @RequestParam(defaultValue = "D1_12_MM") Tape tape, @RequestParam(required = false, defaultValue = "false") boolean preview) {
         Printer printer = searchForPrinter(serialNumber).orElseThrow(ResourceNotFoundException::new);
         var supportedLabelHeights = printer.getLabelHeight();
 
@@ -114,6 +114,9 @@ public class PrintController {
 
         try {
             BufferedImage image = ImageIO.read(multipartFile.getInputStream());
+            if (image == null) {
+                throw new BadRequestException("Unsupported image type!");
+            }
             if (image.getHeight() != maxLabelHeight) {
                 image = scaleLabel(image, maxLabelHeight);
             }
