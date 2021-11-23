@@ -12,7 +12,7 @@
 
 	<groupId>de.piobyte.tools</groupId>
 	<artifactId>dymo-print-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.9.0</version>
 	<name>dymo-print-server</name>
 
 	<description>RESTful Web Service for the use of Dymo labeling machines (LabelManager PnP).</description>
