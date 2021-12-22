@@ -1,9 +1,6 @@
 # dymo-print-server
 RESTful Web Service for the use of Dymo labeling machines (LabelManager PnP).
-The project is build on top of the __dymo-print__ Java library.
-
-// TODO link to dymo-print project
-
+The project is build on top of the [dymo-print](https://github.com/piobyte/dymo-print) Java library.
 
 ## Supported printers
 - DYMO LabelManager PnP
